@@ -1,5 +1,11 @@
 const Tarea = require('../models/Tarea');
 
+exports.listarTareas = async (req, res) => {
+    const tasks = await Tarea.find({ usuarioId: req.usuario.id });
+
+    res.status(201).json({ status: 'success', data: tasks });
+  };
+
 exports.createTarea = async (req, res) => {
   const { titulo, descripcion } = req.body;
 
@@ -31,7 +37,7 @@ exports.deleteTarea = async (req, res) => {
   if (!id) {
     return res.status(400).json({ status: 'error', message: 'ID es requerido' });
   }
-  
+
   const tarea = await Tarea.findByIdAndDelete(id);
   if (!tarea) return res.status(404).send('Tarea not found');
   res.send('Tarea deleted');
