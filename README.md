@@ -26,3 +26,6 @@ node index.js
 - Crear Tarea:      [POST]   http://localhost:5001/api/tareas
 - Actualizar Tarea: [PUT]    http://localhost:5001/api/tareas/:id
 - Eliminar Tarea:   [DELETE] http://localhost:5001/api/tareas/:id
+
+# Authors
+- [@LeyderMendietaSoftware](https://github.com/LeyderMendietaSoftware)
